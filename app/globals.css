@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.skill {
+    letter-spacing: .5rem;
+    text-shadow: 0 0 .3rem ;
+}
+.hr-sohel {
+    text-shadow: 0 0 .8rem;
+}
+.menu-list {position: relative;}
+.menu-list::after {
+    content: '';
+    width: 100%;
+    position: absolute;
+    left: 0; bottom: -5px;
+    background-color: rgb(250 204 21);
+    height: .15rem;
+}
+@media(max-width: 769px) {
+    .skill {
+        letter-spacing: 0rem;
+    }
+    nav, nav ul {
+        width: 100%; padding: .5rem;
+        z-index: 10;
+        transition:  all .5s;
+    }
+    nav ul li {
+        margin: 1rem 0;
+        width: 100%;
+        text-align: center;
+        padding: .5rem;
+        color: white;
+    }
+        nav ul li a {
+            display: block;
+        }
+        .menu-list::after {
+            content: '';
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: -5%;
+            background-color: white;
+            height: .2rem;
+        }
+    .bars{
+        transition: all .5s;
+        transform: rotate(-180deg);
+    }
+    .fa-times{
+        transition: all .5s;
+        transform: rotate(180deg);
+    }
+}
+
+main {
+    position: relative;
+}
+main::after {
+    content: '';
+    position: absolute;
+    top: 0;right: 0;
+    background-color: rgb(250 204 21);
+    z-index: -10;
+    width: 30%; height: 100%;
+}
+ .about {
+     box-shadow: 0 0 .5rem rgb(250 204 21);
+ }
+
+ .service-card {
+    box-shadow: 0 0 .5rem rgb(250 204 21);
+ }
+
+ .experience {
+    background-image: url(../public/images/gigfiverr2.png);
+    background-position: bottom;
+    background-attachment: fixed;
+    background-size: cover;
+ }
+
+ .overlay {
+    /* background: rgb(250, 204, 21, .3); */
+    background: rgb(255, 255, 255, .2);
+ }
+
+ .experience .icons {
+    font-size: 6rem;
+    align-self: center;
+    color: rgb(250 204 21)
+ }
+
+.portfolio-image {
+    transition: all .5s;
+}
+
+ .portfolio-image:hover {
+    transform: scale(1.2);
+ }
+ .line-loader {
+    animation: loader 1s linear infinite alternate;
+ }
+footer {
+    box-shadow: 0 0 .35rem black;
+}
+ @keyframes loader {
+    0% {
+        background-color: rgb(250 204 21);
+    }
+    50% {
+        background-color: rgb(202 138 4);
+    }
+    75% {
+        background-color: rgb(133 77 14);
+    }
+    100% {
+        background-color: rgb(254 240 138);
+    }
+ }
