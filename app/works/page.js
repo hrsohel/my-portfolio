@@ -18,46 +18,62 @@ const page = () => {
       <div className="min-h-[50vh] experience relative">
         <div className="overlay absolute top-0 left-0 w-full h-full"></div>
         <div className="flex items-center justify-around p-8 md:flex-nowrap flex-wrap">
-          <div className="flex justify-center flex-col text-black my-2">
-            <div className="w-[10rem] p-4 h-[10rem] rounded-full bg-white flex items-center justify-center">
-              <FontAwesomeIcon icon={faCheckCircle} className="icons" />
+          <div className="flex items-center justify-center flex-col text-black my-2">
+            <div className="w-[5rem] h-[5rem] sm:w-[8rem] p-4 sm:h-[8rem] rounded-full bg-white flex items-center justify-center">
+              <FontAwesomeIcon
+                icon={faCheckCircle}
+                className="icons text-6xl sm:text-7xl md:text-8xl"
+              />
             </div>
-            <p className="text-4xl font-bold text-center my-2">10</p>
-            <p className="uppercase text-center text-lg font-bold">
+            <p className="text-2xl md:text-4xl font-bold text-center my-2">
+              10
+            </p>
+            <p className="uppercase text-center text-[1rem] md:text-lg font-bold">
               Works completed
             </p>
           </div>
-          <div className="flex justify-center flex-col text-black my-2">
-            <div className="w-[10rem] p-4 h-[10rem] rounded-full bg-white flex items-center justify-center">
-              <FontAwesomeIcon icon={faBriefcase} className="icons" />
+          <div className="flex justify-center items-center flex-col text-black my-2">
+            <div className="w-[5rem] h-[5rem] sm:w-[8rem] p-4 sm:h-[8rem] rounded-full bg-white flex items-center justify-center">
+              <FontAwesomeIcon
+                icon={faBriefcase}
+                className="icons text-5xl sm:text-7xl "
+              />
             </div>
-            <p className="text-4xl font-bold text-center my-2">3</p>
-            <p className="uppercase text-center text-lg font-bold">
+            <p className="text-2xl md:text-4xl font-bold text-center my-2">3</p>
+            <p className="uppercase text-center text-[1rem] md:text-lg font-bold">
               years of experience
             </p>
           </div>
-          <div className="flex justify-center flex-col text-black my-2">
-            <div className="w-[10rem] p-4 h-[10rem] rounded-full bg-white flex items-center justify-center">
-              <FontAwesomeIcon icon={faUsers} className="icons" />
+          <div className="flex justify-center items-center flex-col text-black my-2">
+            <div className="w-[5rem] h-[5rem] sm:w-[8rem] p-4 sm:h-[8rem] rounded-full bg-white flex items-center justify-center">
+              <FontAwesomeIcon
+                icon={faUsers}
+                className="icons text-5xl sm:text-7xl "
+              />
             </div>
-            <p className="text-4xl font-bold text-center my-2">12</p>
-            <p className="uppercase text-center text-lg font-bold">
+            <p className="text-2xl md:text-4xl font-bold text-center my-2">
+              12
+            </p>
+            <p className="uppercase text-center text-[1rem] md:text-lg font-bold">
               total clients
             </p>
           </div>
-          <div className="flex justify-center flex-col text-black my-2">
-            <div className="w-[10rem] p-4 h-[10rem] rounded-full bg-white flex items-center justify-center">
-              <FontAwesomeIcon icon={faAward} className="icons" />
+          <div className="flex justify-center items-center flex-col text-black my-2">
+            <div className="w-[5rem] h-[5rem] sm:w-[8rem] p-4 sm:h-[8rem] rounded-full bg-white flex items-center justify-center">
+              <FontAwesomeIcon
+                icon={faAward}
+                className="icons text-5xl sm:text-7xl md:text-8xl"
+              />
             </div>
-            <p className="text-4xl font-bold text-center my-2">2</p>
-            <p className="uppercase text-center text-lg font-bold">
+            <p className="text-2xl md:text-4xl font-bold text-center my-2">2</p>
+            <p className="uppercase text-center text-[1rem] md:text-lg font-bold">
               awards won
             </p>
           </div>
         </div>
       </div>
       <div className="pb-8">
-        <h1 className="uppercase font-bold my-8 text-4xl text-center">
+        <h1 className="uppercase font-bold my-8 text-2xl md:text-4xl text-center">
           portfolio
         </h1>
         <div className="flex items-center justify-center flex-wrap sm:px-8">

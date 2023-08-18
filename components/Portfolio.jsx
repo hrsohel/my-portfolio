@@ -20,8 +20,10 @@ const Portfolio = ({ title, description, image, date }) => {
         <div className="p-4">
           <h1 className="my-3 text-xl font-bold">{title}</h1>
           <p>
-            <span className="text-yellow-600 text-lg">{description}</span> /{" "}
-            <span className="text-[#333] text-lg">{date}</span>
+            <span className="text-yellow-600 text-sm sm:text-lg">
+              {description}
+            </span>{" "}
+            / <span className="text-[#333] text-sm sm:text-lg">{date}</span>
           </p>
         </div>
       </div>

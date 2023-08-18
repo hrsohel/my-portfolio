@@ -5,13 +5,11 @@ import Image from "next/image";
 const HomeComponent = () => {
   const [image, setImage] = React.useState("/images/imaheforportfolio.png");
   React.useEffect(() => {
-    window.addEventListener("resize", () => {
-      if (window.innerWidth < 769) {
-        setImage("/images/image with yellow.png");
-      } else {
-        setImage("/images/imaheforportfolio.png");
-      }
-    });
+    if (window.innerWidth < 769) {
+      setImage("/images/image with yellow.png");
+    } else {
+      setImage("/images/imaheforportfolio.png");
+    }
   }, []);
   return (
     <main className="px-2 md:px-8 min-h-[90vh] ">

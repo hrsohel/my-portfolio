@@ -7,8 +7,12 @@ const page = () => {
   return (
     <>
       <Navbar />
-      <h1 className="text-center text-4xl font-bold py-4">SERVICES</h1>
-      <p className="text-center text-lg mb-4">These are the services I serve</p>
+      <h1 className="text-center text-2xl sm:text-4xl font-bold py-4">
+        SERVICES
+      </h1>
+      <p className="text-center text-[1rem] sm:text-lg mb-4">
+        These are the services I serve
+      </p>
       <div className="flex items-start justify-center flex-wrap">
         {data.map((item) => {
           return (

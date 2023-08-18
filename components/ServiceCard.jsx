@@ -25,21 +25,21 @@ const ServiceCard = ({ title, content, icon }) => {
     <div
       onMouseOver={mouseOver}
       onMouseLeave={mouseLeave}
-      className="service-card m-2 p-4 w-full min-h-[30rem] rounded-md sm:w-[25rem]"
+      className="service-card m-2 p-4 w-full min-h-[20rem] sm:min-h-[30rem] rounded-md sm:w-[25rem]"
     >
       <div
         ref={divRef}
-        className="p-8 my-4 border-8 mx-auto flex items-center justify-center w-[10rem] h-[10rem] transition-all bg-transparent border-yellow-400 rounded-full"
+        className="p-8 my-4 border-8 mx-auto flex items-center justify-center w-[5rem] h-[5rem] sm:w-[10rem] sm:h-[10rem] transition-all bg-transparent border-yellow-400 rounded-full"
       >
         <FontAwesomeIcon
           ref={iconRef}
           icon={icon}
-          size="4x"
-          className="text-yellow-400"
+          // size="4x"
+          className="text-yellow-400 text-4xl sm:text-7xl"
         />
       </div>
-      <h1 className="text-center text-xl mb-2 uppercase">{title}</h1>
-      <p className="text-center text-[1rem] sm:text-[1.1rem]">{content}</p>
+      <h1 className="text-center text-lg sm:text-xl mb-2 uppercase">{title}</h1>
+      <p className="text-center text-sm sm:text-[1rem]">{content}</p>
     </div>
   );
 };
