@@ -113,10 +113,7 @@ const page = () => {
                   color="rgb(59 130 246)"
                 />
               </Link>
-              <Link
-                className="mr-4"
-                href="https://www.linkedin.com/in/mohammad-harunur-rashid-057857287/"
-              >
+              <Link className="mr-4" href="#">
                 <FontAwesomeIcon
                   icon={faLinkedin}
                   size="2xl"
