@@ -59,6 +59,17 @@
 @media(max-width: 640px) {
     .bars {display: none}
 }
+@media(max-width: 380px) {
+    .achievment {
+        flex-direction: column;
+    }
+    .experience {
+        background: url(../public/images/formobile.jpg);
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+}
 
 main {
     position: relative;
@@ -80,15 +91,15 @@ main::after {
  }
 
  .experience {
-    background-image: url(../public/images/gigfiverr2.png);
-    background-position: bottom;
+    background-image: url(../public/images/pxfuel.jpg);
+    background-position: center;
     background-attachment: fixed;
     background-size: cover;
  }
-
+ 
  .overlay {
-    /* background: rgb(250, 204, 21, .3); */
-    background: rgb(255, 255, 255, .2);
+    /* background: rgb(250, 204, 21, .1); */
+    background: rgb(0, 0, 0 , .2);
  }
 
  .experience .icons {

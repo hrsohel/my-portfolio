@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import Footer from "@/components/Footer";
 
 const page = () => {
+  const res = fetch("/api").then(() => console.log("data"));
   return (
     <>
       <Navbar />

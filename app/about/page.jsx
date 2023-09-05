@@ -1,5 +1,4 @@
 import Navbar from "@/components/Navbar";
-import Image from "next/image";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,6 +11,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import Link from "next/link";
 import { skills } from "@/controllers/skill";
 import Footer from "@/components/Footer";
+import AboutImagePart from "@/components/AboutImagePart";
 
 const page = () => {
   return (
@@ -20,39 +20,7 @@ const page = () => {
       <div className=" my-4 mx-2 md:mx-auto md:w-[90%] lg:w-[85%] rounded-md about flex items-center justify-center p-4">
         <div className="flex items-start justify-between flex-wrap lg:flex-nowrap">
           <div className="">
-            <div className="flex items-start sm:items-center justify-center flex-wrap sm:flex-nowrap">
-              <Image
-                src="/images/image at VR.jpeg"
-                alt="my image"
-                style={{ objectFit: "cover" }}
-                width="1000"
-                height="1000"
-                className="rounded-md mb-4 w-[120px] h-[120px] sm:w-[200px] sm:h-[200px] lg:w-[220px] lg:h-[220px]"
-              />
-              <div className="ml-2 sm:ml-8 font-semibold sm:text-lg text-sm">
-                <div className="mb-2">
-                  Name:{" "}
-                  <span className="font-normal">Mohammad Harunur Rashid</span>
-                </div>
-                <div className="mb-2">
-                  Profile:{" "}
-                  <span className="font-normal">
-                    Full-stack, Mobile and Desktop application developer
-                  </span>
-                </div>
-                <div className="mb-2">
-                  Address:{" "}
-                  <span className="font-normal">Chattogram, Bangladesh</span>
-                </div>
-                <div className="mb-2">
-                  Email:{" "}
-                  <span className="font-normal">hrsohel679@gmail.com</span>
-                </div>
-                <div className="mb-2">
-                  Phone: <span className="font-normal">(+880) 1690130452</span>
-                </div>
-              </div>
-            </div>
+            <AboutImagePart />
             <br />
             <br />
             <div>

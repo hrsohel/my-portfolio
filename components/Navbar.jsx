@@ -1,24 +1,14 @@
 "use client";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBars,
-  faBriefcase,
-  faCog,
-  faHome,
-  faInfoCircle,
-  faLaptop,
-  faTimes,
-} from "@fortawesome/free-solid-svg-icons";
+import { faBars, faLaptop, faTimes } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Loader from "./Loader";
-import Image from "next/image";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import BootomNav from "./BootomNav";
 
 const Navbar = () => {
-  const history = useRouter();
   const [show, setShow] = React.useState(false);
   const [loadershow, setLoaderShow] = React.useState(false);
   const router = usePathname();
@@ -68,7 +58,11 @@ const Navbar = () => {
                 Services
               </Link>
             </li>
-            <li className={`mx-2 ${router === "/works" ? "menu-list" : ""}`}>
+            <li
+              className={`mx-2 ${
+                router === "/works" || router === "/add-work" ? "menu-list" : ""
+              }`}
+            >
               <Link onClick={() => manageLoader("/works")} href="/works">
                 Work
               </Link>
@@ -95,100 +89,7 @@ const Navbar = () => {
         </div>
       </header>
       {loadershow ? <Loader /> : <></>}
-      <div className="sm:hidden block z-40 fixed left-0 bottom-0 right-0 bg-yellow-600">
-        <ul className="px-2 py-2 flex items-center justify-between">
-          <li className="flex items-center justify-center flex-col">
-            <Link href="/">
-              <>
-                <FontAwesomeIcon
-                  icon={faHome}
-                  size="lg"
-                  color={`${router === "/" ? "#333" : "#fff"}`}
-                />
-              </>
-            </Link>
-            <span
-              className={`block font-semibold ${
-                router === "/" ? "text-[#333]" : "text-white"
-              }`}
-            >
-              Home
-            </span>
-          </li>
-          <li className="flex items-center justify-center flex-col">
-            <Link href="/about">
-              <>
-                <FontAwesomeIcon
-                  icon={faInfoCircle}
-                  size="xl"
-                  color={`${router === "/about" ? "#333" : "#fff"}`}
-                />
-              </>
-            </Link>
-            <span
-              className={`block font-semibold ${
-                router === "/about" ? "text-[#333]" : "text-white"
-              }`}
-            >
-              About
-            </span>
-          </li>
-          <li className="flex items-center justify-center flex-col">
-            <Link href="/services">
-              <>
-                <FontAwesomeIcon
-                  icon={faCog}
-                  size="xl"
-                  color={`${router === "/services" ? "#333" : "#fff"}`}
-                />
-              </>
-            </Link>
-            <span
-              className={`block font-semibold ${
-                router === "/services" ? "text-[#333]" : "text-white"
-              }`}
-            >
-              Services
-            </span>
-          </li>
-          <li className="flex items-center justify-center flex-col">
-            <Link href="/works">
-              <>
-                <FontAwesomeIcon
-                  icon={faBriefcase}
-                  size="xl"
-                  color={`${router === "/works" ? "#333" : "#fff"}`}
-                />
-              </>
-            </Link>
-            <span
-              className={`block font-semibold ${
-                router === "/works" ? "text-[#333]" : "text-white"
-              }`}
-            >
-              Work
-            </span>
-          </li>
-          <li className="flex items-center justify-center flex-col">
-            <Link href="/contact">
-              <>
-                <FontAwesomeIcon
-                  icon={faEnvelope}
-                  size="xl"
-                  color={`${router === "/contact" ? "#333" : "#fff"}`}
-                />
-              </>
-            </Link>
-            <span
-              className={`block font-semibold ${
-                router === "/contact" ? "text-[#333]" : "text-white"
-              } `}
-            >
-              Contact
-            </span>
-          </li>
-        </ul>
-      </div>
+      <BootomNav />
     </>
   );
 };
