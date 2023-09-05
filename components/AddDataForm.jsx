@@ -23,7 +23,10 @@ const AddDataForm = () => {
       formData.append("github", github);
       formData.append("image", image);
       formData.append("desc", desc);
-      const response = await axios.post(`/api/get-work`, formData);
+      const response = await axios.post(
+        `https://hrfolio.vercel.app/api/get-work`,
+        formData
+      );
       if (response?.data?.success) router.push("/works");
       if (response?.data?.error) setError(response?.data?.error);
     } catch (err) {
