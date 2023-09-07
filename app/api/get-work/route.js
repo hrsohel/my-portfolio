@@ -10,7 +10,7 @@ export async function GET() {
 export async function POST(req) {
   const body = await req.formData();
   try {
-    // const imageName = await uploadImage(body.get("image"));
+    const imageName = await uploadImage(body.get("image"));
     await Work.create({
       title: body.get("title"),
       category: body.get("category"),
@@ -19,7 +19,7 @@ export async function POST(req) {
       url: body.get("url"),
       github: body.get("github"),
       date: body.get("date"),
-      // image: imageName,
+      image: imageName,
     });
     return NextResponse.json({ success: true });
   } catch (error) {

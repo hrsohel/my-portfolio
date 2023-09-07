@@ -1,6 +1,6 @@
 import { writeFile } from "fs/promises";
 
-export const uploadImage = async (image) => {
+export async function uploadImage(image) {
   const promise = new Promise(async (resolve, reject) => {
     if (image) {
       const name = image.name.split(".")[0];
@@ -13,4 +13,4 @@ export const uploadImage = async (image) => {
     }
   });
   return promise;
-};
+}
