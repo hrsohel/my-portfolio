@@ -1,4 +1,5 @@
 import fs from "fs";
+import { join } from "path";
 
 export async function uploadImage(image) {
   let fileName;
@@ -9,7 +10,7 @@ export async function uploadImage(image) {
     fileName = `${name}${Math.random()}.${ext}`;
     const arrayBuffer = await blob.arrayBuffer();
     fs.writeFile(
-      `public/uploads/${fileName}`,
+      join(process.cwd(), "public", "uploads", fileName),
       Buffer.from(arrayBuffer),
       (err) => {
         if (err) console.log(err.message);
