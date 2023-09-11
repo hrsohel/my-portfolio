@@ -2,11 +2,14 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import Image from "next/image";
 
 const AddDataForm = () => {
   const router = useRouter();
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState("");
+  const [file, setfile] = React.useState("");
+  const [previewImage, setPreviewImage] = React.useState("");
   const submit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -21,7 +24,7 @@ const AddDataForm = () => {
       formData.append("client", client);
       formData.append("url", url);
       formData.append("github", github);
-      formData.append("image", image);
+      formData.append("image", file);
       formData.append("desc", desc);
       const response = await axios.post(`/api/get-work`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
@@ -33,6 +36,14 @@ const AddDataForm = () => {
     } finally {
       setLoading(false);
     }
+  };
+  const setImage = async (e) => {
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      setPreviewImage(event.target.result);
+    };
+    setfile(e.target.files[0]);
+    reader.readAsDataURL(e.target.files[0]);
   };
   React.useEffect(() => {
     axios.get(`/api/get-cookie`).then((res) => {
@@ -105,12 +116,28 @@ const AddDataForm = () => {
             Select image
           </label>
           <input
+            onChange={setImage}
             type="file"
             className="hidden"
             name="image"
             id="image"
             required={true}
           />
+
+          {previewImage ? (
+            <div>
+              <Image
+                src={previewImage}
+                // src="/uploads/uploadedfuile.png"
+                className="w-full object-cover"
+                width="1000"
+                height="1000"
+                alt="preview"
+              />
+            </div>
+          ) : (
+            <></>
+          )}
           <button
             disabled={loading}
             className="px-4 py-2 bg-yellow-500 text-white text-sm md:text-xl hover:bg-yellow-300 hover:border-yellow-500 border2 my-2"

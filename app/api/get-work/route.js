@@ -7,7 +7,7 @@ export async function GET() {
   return NextResponse.json({ works: await Work.find({}) });
 }
 
-export async function POST(req) {
+export async function POST(req, res) {
   const body = await req.formData();
   try {
     const imageName = await uploadImage(body.get("image"));

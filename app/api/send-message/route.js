@@ -6,8 +6,9 @@ export async function POST(req) {
   try {
     const transporter = await nodemailer.createTransport({
       host: "smtp.gmail.com",
-      port: 587,
-      secure: false,
+      // port: 587,
+      port: 465,
+      secure: true,
       auth: {
         user: process.env.USER_EMAIL,
         pass: process.env.EMAIL_PASS,
@@ -26,13 +27,24 @@ export async function POST(req) {
               <p style="font-size: .8rem;">${body.get("message")}</p>
             </div>`,
     };
-    transporter.sendMail(mailOptions, (err, result) => {
-      if (!err) {
-        console.log(`Email sent ${result.response}`);
-        return NextResponse.json({ message: "Your email sent" });
-      } else {
-        console.log(err.message);
-      }
+    // transporter.sendMail(mailOptions, (err, result) => {
+    //   if (!err) {
+    //     console.log(`Email sent ${result.response}`);
+    //     return NextResponse.json({ message: "Your email sent" });
+    //   } else {
+    //     console.log(err.message);
+    //   }
+    // });
+    await new Promise((resolve, reject) => {
+      transporter.sendMail(mailOptions, (err, info) => {
+        if (err) {
+          console.error(err);
+          reject(err);
+        } else {
+          console.log(`Email sent ${info.response}`);
+          resolve(info);
+        }
+      });
     });
     return NextResponse.json({ message: "Your email sent" });
   } catch (error) {
