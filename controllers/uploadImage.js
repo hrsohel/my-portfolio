@@ -1,4 +1,4 @@
-import { writeFile } from "fs/promises";
+import fs from "fs";
 
 export async function uploadImage(image) {
   let fileName;
@@ -8,7 +8,14 @@ export async function uploadImage(image) {
     const ext = image.name.split(".")[1];
     fileName = `${name}${Math.random()}.${ext}`;
     const arrayBuffer = await blob.arrayBuffer();
-    await writeFile(`./public/uploads/${fileName}`, Buffer.from(arrayBuffer));
+    fs.writeFile(
+      `public/uploads/${fileName}`,
+      Buffer.from(arrayBuffer),
+      (err) => {
+        if (err) console.log(err.message);
+        else console.log("Image uploaded");
+      }
+    );
   }
 
   return fileName;
