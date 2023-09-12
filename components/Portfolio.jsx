@@ -59,7 +59,7 @@ const Portfolio = ({
       >
         <div className="overflow-hidden relative">
           <Image
-            src={`/uploads/${image}`}
+            src="https://res.cloudinary.com/dkghfblzg/image/upload/v1694502247/akbnoargx1idp592cemk.jpg"
             width="1000"
             height="1000"
             alt="supersolution"
