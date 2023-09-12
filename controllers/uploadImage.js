@@ -37,10 +37,9 @@ export function uploadImage(image) {
         fileName = `${name}${Math.random()}.${ext}`;
         const arrayBuffer = await blob.arrayBuffer();
         const imageForClodinary = `tempImages/${fileName}`;
-        fs.writeFileSync(`./tempImages/${fileName}`, Buffer.from(arrayBuffer));
+        fs.writeFileSync(`tempImages/${fileName}`, Buffer.from(arrayBuffer));
         cloudinary.uploader.upload(imageForClodinary).then((result) => {
           cloudinaryURL = result.url;
-          console.log(cloudinaryURL);
           resolve(cloudinaryURL); // Resolve the promise with the URL
         });
       } catch (error) {

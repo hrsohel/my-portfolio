@@ -11,7 +11,6 @@ export async function POST(req, res) {
   const body = await req.formData();
   try {
     const imageName = await uploadImage(body.get("image"));
-    console.log(imageName);
     if (imageName) {
       await Work.create({
         title: body.get("title"),
