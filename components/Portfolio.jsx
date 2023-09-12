@@ -22,6 +22,7 @@ const Portfolio = ({
   update,
   images,
 }) => {
+  console.log(image);
   const [showLoader, setShowLoader] = React.useState(false);
   const [cookie, setCookie] = React.useState("");
   const [loading, setLoading] = React.useState(false);
@@ -59,7 +60,7 @@ const Portfolio = ({
       >
         <div className="overflow-hidden relative">
           <Image
-            src={image}
+            src={image?.url}
             width="1000"
             height="1000"
             alt="supersolution"

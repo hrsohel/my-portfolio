@@ -10,8 +10,8 @@ const UserSchema = new Schema({
     default: null,
   },
   aboutImage: {
-    type: String,
-    default: null,
+    public_id: { type: String },
+    url: { type: String },
   },
   workCompleted: {
     type: Number,

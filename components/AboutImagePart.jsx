@@ -18,7 +18,7 @@ const AboutImagePart = () => {
           axios.get(`/api/user`),
         ]);
         setCookie(cookie?.data?.cookie);
-        setImage(image?.data?.user[0]?.aboutImage);
+        setImage(image?.data?.user[0]?.aboutImage?.url);
       } catch (error) {
         console.error(error);
       }
@@ -41,7 +41,7 @@ const AboutImagePart = () => {
             onClick={() => {
               if (cookie) setOpenModel(true);
             }}
-            src={image ? `/uploads/${image}` : "/images/loader.svg"}
+            src={image ? image : "/images/loader.svg"}
             alt="HR Sohel's image"
             style={{ objectFit: "cover" }}
             width="1000"

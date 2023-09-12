@@ -141,7 +141,7 @@ const PortfolioDetails = () => {
                     <Image
                       onClick={() => setShowImageUpdate(true)}
                       src={`${
-                        image ? `/uploads/${image}` : "/images/gigfiverr2.png"
+                        image ? `/uploads/${image}` : "/images/pxfuel.jpg"
                       }`}
                       width="1000"
                       height="1000"

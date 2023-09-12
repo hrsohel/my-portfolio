@@ -30,7 +30,8 @@ const WorkSchema = new Schema(
       type: Date,
     },
     image: {
-      type: String,
+      public_id: { type: String },
+      url: { type: String },
     },
     carouselImages: {
       type: [String],
