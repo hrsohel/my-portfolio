@@ -12,16 +12,18 @@ export async function POST(req, res) {
   try {
     const imageName = await uploadImage(body.get("image"));
     console.log(imageName);
-    await Work.create({
-      title: body.get("title"),
-      category: body.get("category"),
-      desc: body.get("desc"),
-      client: body.get("client"),
-      url: body.get("url"),
-      github: body.get("github"),
-      date: body.get("date"),
-      image: imageName,
-    });
+    if (imageName) {
+      await Work.create({
+        title: body.get("title"),
+        category: body.get("category"),
+        desc: body.get("desc"),
+        client: body.get("client"),
+        url: body.get("url"),
+        github: body.get("github"),
+        date: body.get("date"),
+        image: imageName,
+      });
+    }
     return NextResponse.json({ success: true });
   } catch (error) {
     console.log(error.message);
