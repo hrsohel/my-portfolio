@@ -115,7 +115,7 @@ const ProjectInfo = ({ data, setUpdate, update }) => {
         </>
       ) : (
         <>
-          <div className="p-4 bg-white mt-4 md:mt-0 relative w-[90vw] mx-auto md:w-auto">
+          <div className="p-4 bg-white mt-4 md:mt-0 relative w-full mx-auto ">
             {cookie ? (
               <>
                 <span

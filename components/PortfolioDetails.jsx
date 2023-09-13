@@ -143,7 +143,7 @@ const PortfolioDetails = () => {
                       src={`${image ? image?.url : "/images/pxfuel.jpg"}`}
                       width="1000"
                       height="1000"
-                      className="w-full h-[18rem] sm:h-[25rem] object-cover"
+                      className="w-full h-[18rem] sm:h-[25rem] object-contain"
                       alt="sub image"
                     />
                   ) : (
