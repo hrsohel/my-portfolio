@@ -45,7 +45,7 @@ const PortfolioDetails = () => {
   }, [params, update]);
   const deleteImage = async (image) => {
     const formData = new FormData();
-    formData.append("image", image);
+    formData.append("image_id", image._id);
     formData.append("_id", data?._id);
     const res = await axios.put(`/api/add-carousel-image`, formData);
     if (res?.data?.error) alert("Failed to delete image");
@@ -56,7 +56,7 @@ const PortfolioDetails = () => {
     const formData = new FormData();
     formData.append("update-image", e.target.files[0]);
     formData.append("_id", data?._id);
-    formData.append("old-image", image);
+    formData.append("old-image", image._id);
     const res = await axios.patch(`/api/add-carousel-image`, formData);
     if (res?.data?.error) alert("Failed to update image");
     setShowImageUpdate(false);
@@ -140,9 +140,7 @@ const PortfolioDetails = () => {
                   {!imageLoading ? (
                     <Image
                       onClick={() => setShowImageUpdate(true)}
-                      src={`${
-                        image ? `/uploads/${image}` : "/images/pxfuel.jpg"
-                      }`}
+                      src={`${image ? image?.url : "/images/pxfuel.jpg"}`}
                       width="1000"
                       height="1000"
                       className="w-full h-[18rem] sm:h-[25rem] object-cover"

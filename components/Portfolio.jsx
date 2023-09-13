@@ -22,7 +22,6 @@ const Portfolio = ({
   update,
   images,
 }) => {
-  console.log(image);
   const [showLoader, setShowLoader] = React.useState(false);
   const [cookie, setCookie] = React.useState("");
   const [loading, setLoading] = React.useState(false);
@@ -45,8 +44,7 @@ const Portfolio = ({
     setLoading(true);
     const formData = new FormData();
     formData.append("_id", id);
-    formData.append("image", image);
-    formData.append("images", images);
+    formData.append("image", image.public_id);
     const res = await axios.patch(`/api/change-portfolio-image`, formData);
     if (res?.data?.error) alert("Failed to delete!");
     setLoading(true);

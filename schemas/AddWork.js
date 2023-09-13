@@ -34,7 +34,12 @@ const WorkSchema = new Schema(
       url: { type: String },
     },
     carouselImages: {
-      type: [String],
+      type: [
+        {
+          public_id: { type: String },
+          url: { type: String },
+        },
+      ],
       default: [],
     },
   },
