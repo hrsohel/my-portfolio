@@ -90,18 +90,6 @@ main::after {
     box-shadow: 0 0 .5rem rgb(250 204 21);
  }
 
- .experience {
-    background-image: url(../public/images/pxfuel.jpg);
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
- }
- 
- .overlay {
-    /* background: rgb(250, 204, 21, .1); */
-    background: rgb(0, 0, 0 , .2);
- }
-
  .experience .icons {
     align-self: center;
     color: rgb(250 204 21)

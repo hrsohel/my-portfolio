@@ -77,9 +77,9 @@ const PortfolioDetails = () => {
         </>
       ) : (
         <>
-          <div className="min-h-[50vh]  bg-yellow-300 flex items-center justify-center">
+          <div className="min-h-[50vh]  bg-yellow-500 flex items-center justify-center">
             <h1 className="text-center uppercase text-xl text-white font-semibold sm:text-2xl md:text-4xl">
-              Portfolio details
+              project details
             </h1>
           </div>
           <div className="flex items-start px-2 sm:px-4 bg-slate-200 py-4 justify-around flex-wrap md:flex-nowrap overflow-hidden">

@@ -106,7 +106,7 @@ const ProjectDetails = ({ data, setUpdate, update }) => {
               <></>
             )}
             <h1 className="text-lg sm:text-2xl font-semibold">
-              Project detail
+              Project details
             </h1>
             <p className="text-sm md:text-lg mt-3">{data.desc}</p>
           </div>
