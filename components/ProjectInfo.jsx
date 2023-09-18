@@ -7,15 +7,9 @@ import Image from "next/image";
 import axios from "axios";
 import Link from "next/link";
 
-const ProjectInfo = ({ data, setUpdate, update }) => {
+const ProjectInfo = ({ data, setUpdate, update, cookie }) => {
   const [showUpdate, setShowUpdate] = React.useState(false);
-  const [cookie, setCookie] = React.useState("");
   const [loading, setLoading] = React.useState(false);
-  React.useEffect(() => {
-    axios.get("/api/get-cookie").then((res) => {
-      setCookie(res?.data?.cookie);
-    });
-  }, []);
   const submit = async (e) => {
     e.preventDefault();
     setLoading(true);

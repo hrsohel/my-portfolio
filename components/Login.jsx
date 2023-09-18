@@ -20,6 +20,7 @@ const Login = () => {
     const response = await axios.post(`/api/login`, formData);
     if (response?.data?.error) setError(response.data.error);
     if (response?.data?.success) router.push("/");
+
     setLoading(false);
   };
   return (

@@ -174,11 +174,17 @@ const PortfolioDetails = () => {
               </div>
             </div>
             <div className="md:ml-4 ml-0 md:w-[30rem]">
-              <ProjectInfo setUpdate={setUpdate} update={update} data={data} />
+              <ProjectInfo
+                cookie={cookie}
+                setUpdate={setUpdate}
+                update={update}
+                data={data}
+              />
               <ProjectDetails
                 setUpdate={setUpdate}
                 update={update}
                 data={data}
+                cookie={cookie}
               />
             </div>
           </div>

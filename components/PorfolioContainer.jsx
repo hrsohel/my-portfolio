@@ -9,11 +9,16 @@ const PorfolioContainer = () => {
   const [work, setWork] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
   const [update, setUpdate] = React.useState(true);
+  const [cookie, setCookie] = React.useState("");
   React.useEffect(() => {
     setLoading(true);
     const getWork = async () => {
-      const { data } = await axios.get(`/api/get-work`);
-      setWork(data?.works);
+      const [data, res] = await Promise.all([
+        axios.get(`/api/get-work`),
+        axios.get(`/api/get-cookie`),
+      ]);
+      setCookie(res?.data?.cookie);
+      setWork(data?.data?.works);
       setLoading(false);
     };
     getWork();
@@ -44,6 +49,7 @@ const PorfolioContainer = () => {
                 setUpdate={setUpdate}
                 images={item.carouselImages}
                 update={update}
+                cookie={cookie}
               />
             );
           })

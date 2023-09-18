@@ -21,15 +21,10 @@ const Portfolio = ({
   setUpdate,
   update,
   images,
+  cookie,
 }) => {
   const [showLoader, setShowLoader] = React.useState(false);
-  const [cookie, setCookie] = React.useState("");
   const [loading, setLoading] = React.useState(false);
-  React.useEffect(() => {
-    axios.get(`/api/get-cookie`).then((res) => {
-      setCookie(res?.data?.cookie);
-    });
-  }, []);
   const updateImage = async (e) => {
     setLoading(true);
     const fromData = new FormData();
