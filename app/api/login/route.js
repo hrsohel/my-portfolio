@@ -1,3 +1,4 @@
+import "@/controllers/coonectMongo";
 import { NextResponse } from "next/server";
 import User from "@/schemas/User";
 import bcrypt from "bcryptjs";
