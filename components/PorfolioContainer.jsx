@@ -4,25 +4,30 @@ import React from "react";
 import AddWork from "./AddWork";
 import Portfolio from "./Portfolio";
 import Image from "next/image";
+import useSWR from "swr";
+
+const fetcher = async () => {
+  const { data } = await axios.get("/api/get-work");
+  return data;
+};
 
 const PorfolioContainer = () => {
-  const [work, setWork] = React.useState([]);
-  const [loading, setLoading] = React.useState(true);
+  const [loading, setLoading] = React.useState(false);
   const [update, setUpdate] = React.useState(true);
   const [cookie, setCookie] = React.useState("");
+  const { data, isLoading } = useSWR("/api/get-work", fetcher, {
+    refreshInterval: 1000 * 3600,
+  });
   React.useEffect(() => {
-    setLoading(true);
+    setLoading(isLoading);
     const getWork = async () => {
-      const [data, res] = await Promise.all([
-        axios.get(`/api/get-work`),
-        axios.get(`/api/get-cookie`),
-      ]);
+      const res = await axios.get(`/api/get-cookie`);
       setCookie(res?.data?.cookie);
-      setWork(data?.data?.works);
-      setLoading(false);
+      setLoading(isLoading);
     };
+    setLoading(false);
     getWork();
-  }, [update]);
+  }, [update, isLoading]);
   return (
     <>
       <div className="flex items-center justify-center flex-wrap sm:px-8">
@@ -36,7 +41,7 @@ const PorfolioContainer = () => {
             />
           </div>
         ) : (
-          work?.map((item) => {
+          data?.works?.map((item) => {
             return (
               <Portfolio
                 key={item._id}

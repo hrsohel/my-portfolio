@@ -8,17 +8,19 @@ import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
 import { faL, faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
 import ProjectInfo from "./ProjectInfo";
 import ProjectDetails from "./ProjectDetails";
+import useSWR from "swr";
 
 const PortfolioDetails = () => {
   const router = usePathname();
   const params = router.split("/")[2];
+  const url = `/api/get-work/${params}`;
   const [loading, setLoading] = React.useState(true);
   const [imageLoading, setImageLoading] = React.useState(false);
   const [showImageUpdate, setShowImageUpdate] = React.useState(false);
-  const [data, setData] = React.useState([]);
-  const [image, setImage] = React.useState("");
   const [cookie, setCookie] = React.useState("");
   const [update, setUpdate] = React.useState(true);
+  const [data, setData] = React.useState([]);
+  const [image, setImage] = React.useState("");
   const addImage = async (e) => {
     const formData = new FormData();
     formData.append("add-image", e.target.files[0]);
@@ -32,17 +34,18 @@ const PortfolioDetails = () => {
     setImageLoading(true);
     setLoading(true);
     (async () => {
-      const [cookie, data] = await Promise.all([
+      const [cookie, work] = await Promise.all([
         axios.get(`/api/get-cookie`),
-        axios.get(`/api/get-work/${params}`),
+        fetch(url, { next: { revalidate: 1000 * 3600 } }),
       ]);
+      const data = await work.json();
       setCookie(cookie?.data?.cookie);
-      setData(data?.data?.message[0]);
-      setImage(data?.data?.message[0]?.carouselImages[0]);
+      setData(data?.message[0]);
+      setImage(data?.message[0]?.carouselImages[0]);
     })();
     setLoading(false);
     setImageLoading(false);
-  }, [params, update]);
+  }, [update]);
   const deleteImage = async (image) => {
     const formData = new FormData();
     formData.append("image_id", image._id);
@@ -174,18 +177,24 @@ const PortfolioDetails = () => {
               </div>
             </div>
             <div className="md:ml-4 ml-0 md:w-[30rem]">
-              <ProjectInfo
-                cookie={cookie}
-                setUpdate={setUpdate}
-                update={update}
-                data={data}
-              />
-              <ProjectDetails
-                setUpdate={setUpdate}
-                update={update}
-                data={data}
-                cookie={cookie}
-              />
+              {data ? (
+                <>
+                  <ProjectInfo
+                    cookie={cookie}
+                    setUpdate={setUpdate}
+                    update={update}
+                    data={data}
+                  />
+                  <ProjectDetails
+                    setUpdate={setUpdate}
+                    update={update}
+                    data={data}
+                    cookie={cookie}
+                  />
+                </>
+              ) : (
+                <></>
+              )}
             </div>
           </div>
         </>
