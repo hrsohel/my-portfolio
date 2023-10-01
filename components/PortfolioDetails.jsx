@@ -193,7 +193,15 @@ const PortfolioDetails = () => {
                   />
                 </>
               ) : (
-                <></>
+                <>
+                  <Image
+                    src="/images/loader.svg"
+                    width="80"
+                    height="80"
+                    alt="Loader"
+                    className="block mx-auto"
+                  />
+                </>
               )}
             </div>
           </div>

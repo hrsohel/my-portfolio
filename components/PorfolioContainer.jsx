@@ -19,19 +19,16 @@ const PorfolioContainer = () => {
     refreshInterval: 1000 * 3600,
   });
   React.useEffect(() => {
-    setLoading(isLoading);
     const getWork = async () => {
       const res = await axios.get(`/api/get-cookie`);
       setCookie(res?.data?.cookie);
-      setLoading(isLoading);
     };
-    setLoading(false);
     getWork();
-  }, [update, isLoading]);
+  }, [update]);
   return (
     <>
       <div className="flex items-center justify-center flex-wrap sm:px-8">
-        {loading ? (
+        {isLoading ? (
           <div className=" flex items-center justify-center">
             <Image
               src="/images/loader.svg"
