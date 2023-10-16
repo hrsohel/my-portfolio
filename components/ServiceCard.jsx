@@ -1,8 +1,8 @@
 "use client";
 import React, { useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
-import { data } from "@/controllers/data";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ServiceCard = ({ title, content, icon }) => {
   const divRef = useRef();
@@ -21,11 +21,15 @@ const ServiceCard = ({ title, content, icon }) => {
       divRef.current.style.background = "white";
     }
   };
+  React.useEffect(() => {
+    AOS.init({ duration: 2000 });
+  });
   return (
     <div
       onMouseOver={mouseOver}
       onMouseLeave={mouseLeave}
       className="service-card m-2 p-4 w-full min-h-[20rem] sm:min-h-[30rem] rounded-md sm:w-[25rem]"
+      data-aos="zoom-in"
     >
       <div
         ref={divRef}

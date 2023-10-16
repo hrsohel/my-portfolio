@@ -65,7 +65,7 @@ const BootomNav = () => {
               About
             </span>
           </li>
-          <li className="flex items-center justify-center flex-col">
+          {/* <li className="flex items-center justify-center flex-col">
             <Link onClick={showLoader} href="/services">
               <>
                 <FontAwesomeIcon
@@ -84,7 +84,7 @@ const BootomNav = () => {
             >
               Services
             </span>
-          </li>
+          </li> */}
           <li className="flex items-center justify-center flex-col">
             <Link onClick={showLoader} href="/works">
               <>

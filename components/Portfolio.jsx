@@ -11,6 +11,8 @@ import Link from "next/link";
 import Loader from "./Loader";
 import moment from "moment";
 import axios from "axios";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Portfolio = ({
   title,
@@ -45,11 +47,15 @@ const Portfolio = ({
     setLoading(true);
     setUpdate(!update);
   };
+  React.useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
   return (
     <>
       <div
         style={{ boxShadow: "0 0 .3rem #333" }}
         className="md:w-[20rem] lg:w-[25rem] rounded-md m-4"
+        data-aos="zoom-in"
       >
         <div className="overflow-hidden relative">
           <Image

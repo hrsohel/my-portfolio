@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const HomeComponent = () => {
   const [image, setImage] = React.useState("/images/imaheforportfolio.png");
@@ -10,16 +12,20 @@ const HomeComponent = () => {
     } else {
       setImage("/images/imaheforportfolio.png");
     }
+    AOS.init({ duration: 2000 });
   }, []);
   return (
-    <main className="px-2 md:px-8 min-h-[90vh] ">
+    <main className="px-2 md:px-8 min-h-[91vh] border-b-2 border-yellow-400">
       <div>
         <p className="text-2xl font-bold">Create Best Technology</p>
         <p className="text-4xl md:text-6xl font-bold">For Any Device</p>
       </div>
       <div className="flex items-center justify-between flex-wrap md:flex-nowrap">
         <div className="">
-          <div className="flex md:justify-normal justify-center">
+          <div
+            className="flex md:justify-normal justify-center"
+            data-aos="fade-right"
+          >
             <Image
               // src="/images/image with yellow.png"
               src={image}
@@ -37,7 +43,10 @@ const HomeComponent = () => {
             WEB AND SOFTWARE DEVELOPER
           </div>
         </div>
-        <div className="mt-4 w-full h-full flex justify-center md:justify-end">
+        <div
+          className="mt-4 w-full h-full flex justify-center md:justify-end"
+          data-aos="fade-left"
+        >
           <Image
             src="/images/electronjs.png"
             alt="desktop"

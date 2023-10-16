@@ -53,11 +53,11 @@ const Navbar = () => {
                 About
               </Link>
             </li>
-            <li className={`mx-2 ${router === "/services" ? "menu-list" : ""}`}>
+            {/* <li className={`mx-2 ${router === "/services" ? "menu-list" : ""}`}>
               <Link onClick={() => manageLoader("/services")} href="/services">
                 Services
               </Link>
-            </li>
+            </li> */}
             <li
               className={`mx-2 ${
                 router === "/works" || router === "/add-work" ? "menu-list" : ""

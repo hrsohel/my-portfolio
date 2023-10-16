@@ -29,7 +29,6 @@ const ContactForm = () => {
       setLoading(false);
     }
   };
-  React.useEffect(() => {}, []);
   return (
     <>
       {loading ? (
@@ -47,27 +46,27 @@ const ContactForm = () => {
         <form onSubmit={submit}>
           <input
             type="text"
-            className="p-1 text-sm sm:text-lg border-[1px] outline-none my-3 border-black focus:border-yellow-500 w-full"
+            className="p-1 up-to-down text-sm sm:text-lg border-[1px] outline-none my-3 border-black focus:border-yellow-500 w-full"
             placeholder="Your name"
             required={true}
             name="name"
           />
           <input
             type="email"
-            className="p-1 text-sm sm:text-lg border-[1px] outline-none my-3 border-black focus:border-yellow-500 w-full"
+            className="p-1 up-to-down text-sm sm:text-lg border-[1px] outline-none my-3 border-black focus:border-yellow-500 w-full"
             placeholder="Your email"
             required={true}
             name="email"
           />
           <input
             type="text"
-            className="p-1 text-sm sm:text-lg border-[1px] outline-none my-3 border-black focus:border-yellow-500 w-full"
+            className="p-1 up-to-down text-sm sm:text-lg border-[1px] outline-none my-3 border-black focus:border-yellow-500 w-full"
             placeholder="Subject"
             required={true}
             name="subject"
           />
           <textarea
-            className="p-1 text-sm sm:text-lg border-[1px] outline-none my-3 border-black focus:border-yellow-500 w-full"
+            className="p-1 up-to-down text-sm sm:text-lg border-[1px] outline-none my-3 border-black focus:border-yellow-500 w-full"
             cols="30"
             rows="5"
             required={true}

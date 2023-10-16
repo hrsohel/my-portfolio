@@ -44,4 +44,9 @@ export const skills = [
     name: "Apollo GraphQL",
     skill: 65,
   },
+  {
+    id: 10,
+    name: "Electron.js",
+    skill: 70,
+  },
 ];
