@@ -6,14 +6,9 @@ import React from "react";
 import Footer from "@/components/Footer";
 import ServiceCard from "@/components/ServiceCard";
 import { data } from "@/controllers/data";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebook,
-  faXTwitter,
-  faGithub,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
-import Link from "next/link";
+import { skills } from "@/controllers/skill";
+import Skills from "@/components/Skills";
+import AboutImage from "@/components/AboutImage";
 
 const page = () => {
   return (
@@ -50,7 +45,7 @@ const page = () => {
       {/* <p className="text-center text-[1rem] sm:text-lg mb-4">
         These are the services I serve
       </p> */}
-      <div className="flex items-start justify-center flex-wrap">
+      <div className="flex items-start justify-center sm:gap-4 gap-2 my-4 flex-wrap">
         {data.map((item) => {
           return (
             <ServiceCard
@@ -62,43 +57,21 @@ const page = () => {
           );
         })}
       </div>
-      <div className="text-center flex items-center justify-center my-4 text-lg sm:text-2xl  font-bold py-4">
-        <h1
-          style={{ letterSpacing: "5px" }}
-          className="bg-yellow-200 text-yellow-500 uppercase px-4 py-1 rounded-md"
-        >
-          connect with me
-        </h1>
-      </div>
-      <div className="flex items-center justify-center gap-12 mb-8">
-        <Link href="https://www.facebook.com/hr.sohel.980" target="_blank">
-          <FontAwesomeIcon
-            icon={faFacebook}
-            color="rgb(59 130 246)"
-            className="text-2xl sm:text-4xl "
-          />
-        </Link>
-        <Link href="#" target="_blank">
-          <FontAwesomeIcon
-            icon={faLinkedin}
-            color="rgb(59 130 246)"
-            className="text-2xl sm:text-4xl "
-          />
-        </Link>
-        <Link href="https://twitter.com/HRSohel10" target="_blank">
-          <FontAwesomeIcon
-            icon={faXTwitter}
-            className="text-2xl sm:text-4xl "
-            color="rgb(30 48 80)"
-          />
-        </Link>
-        <Link href="https://github.com/hrsohel" target="_blank">
-          <FontAwesomeIcon
-            icon={faGithub}
-            className="text-2xl sm:text-4xl "
-            color="#333"
-          />
-        </Link>
+      <div className="mb-4 mt-20">
+        <div className="text-center flex items-center justify-center text-lg sm:text-2xl font-bold">
+          <h1
+            style={{ letterSpacing: "0" }}
+            className="bg-yellow-200 text-yellow-500 uppercase px-4 py-1 rounded-md"
+          >
+            skills
+          </h1>
+        </div>
+        <br />
+        <div className="flex items-start justify-center gap-2 sm:gap-4 flex-wrap">
+          {skills.map((item) => {
+            return <Skills key={item.id} item={item} />;
+          })}
+        </div>
       </div>
       <Footer />
     </>

@@ -25,15 +25,15 @@ const Navbar = () => {
   };
   return (
     <>
-      <header className="flex items-center relative md:static justify-between bg-white shadow-lg px-4 py-4">
+      <header className="flex items-center relative md:static justify-between bg-[#444] px-4 py-4">
         <div className="flex items-center justify-center">
           <FontAwesomeIcon
             icon={faLaptop}
-            color="rgb(250 204 21)"
+            color="rgb(234 179 8)"
             size="2xl"
             className="text-lg sm:text-2xl"
           />
-          <span className="text-lg sm:text-2xl font-bold text-yellow-400">
+          <span className="text-lg sm:text-2xl font-bold text-yellow-500">
             HRFolio
           </span>
         </div>
@@ -42,7 +42,7 @@ const Navbar = () => {
             show ? "left-[0%]" : "left-[-150%]"
           } md:top-0 md:left-0 `}
         >
-          <ul className="flex items-center bg-yellow-500 md:bg-transparent justify-center flex-col md:flex-row text-xl font-semibold">
+          <ul className="flex items-center text-white bg-yellow-500 md:bg-transparent justify-center flex-col md:flex-row text-xl font-semibold">
             <li className={`mx-2 ${router === "/" ? "menu-list" : ""}`}>
               <Link onClick={() => manageLoader("/")} href="/">
                 Home
@@ -83,7 +83,7 @@ const Navbar = () => {
           <FontAwesomeIcon
             icon={show ? faTimes : faBars}
             size="xl"
-            color="#333"
+            color="white"
             className={show ? "bars" : "fa-times"}
           />
         </div>

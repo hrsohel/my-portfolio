@@ -3,6 +3,14 @@ import React from "react";
 import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faXTwitter,
+  faGithub,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
+import Link from "next/link";
 
 const HomeComponent = () => {
   const [image, setImage] = React.useState("/images/imaheforportfolio.png");
@@ -15,16 +23,16 @@ const HomeComponent = () => {
     AOS.init({ duration: 2000 });
   }, []);
   return (
-    <main className="px-2 md:px-8 min-h-[91vh] border-b-2 border-yellow-400">
-      <div>
+    <main className="px-2 py-4 md:px-8 min-h-[91vh] md:h-[91vh] border-b-2 border-yellow-400">
+      <div className="">
         <p className="text-2xl font-bold">Create Best Technology</p>
         <p className="text-4xl md:text-6xl font-bold">For Any Device</p>
       </div>
-      <div className="flex items-center justify-between flex-wrap md:flex-nowrap">
-        <div className="">
+      <div className="flex mt-8 items-center justify-center flex-wrap md:flex-nowrap">
+        <div className="sm:ml-8">
           <div
             className="flex md:justify-normal justify-center"
-            data-aos="fade-right"
+            data-aos="zoom-in"
           >
             <Image
               // src="/images/image with yellow.png"
@@ -35,25 +43,63 @@ const HomeComponent = () => {
               style={{ width: "80%", height: "80%", marginTop: ".5rem" }}
             />
           </div>
-          <div className="text-3xl sm:text-5xl hr-sohel text-black font-semibold text-center">
-            HR SOHEL
-          </div>
-          <br />
-          <div className="text-center skill font-bold text-lg md:text-xl">
-            WEB AND SOFTWARE DEVELOPER
-          </div>
         </div>
-        <div
-          className="mt-4 w-full h-full flex justify-center md:justify-end"
-          data-aos="fade-left"
-        >
-          <Image
+        <div className="mt-4 w-full  " data-aos="zoom-in">
+          {/* <Image
             src="/images/electronjs.png"
             alt="desktop"
             style={{ width: "80%", height: "80%", objectFit: "contain" }}
             width="1000"
             height="1000"
-          />
+          /> */}
+
+          {/* hr-sohel */}
+          <div className="text-3xl sm:text-5xl  text-black font-bold text-center">
+            HR SOHEL
+          </div>
+          <br />
+          {/* skill */}
+          <div className="text-center  font-bold text-lg md:text-2xl">
+            WEB AND SOFTWARE DEVELOPER
+          </div>
+          <div className="flex items-center justify-center gap-12 my-8">
+            <Link href="https://www.facebook.com/hr.sohel.980" target="_blank">
+              <FontAwesomeIcon
+                icon={faFacebook}
+                color="rgb(59 130 246)"
+                className="text-2xl sm:text-4xl "
+              />
+            </Link>
+            <Link href="#" target="_blank">
+              <FontAwesomeIcon
+                icon={faLinkedin}
+                color="rgb(59 130 246)"
+                className="text-2xl sm:text-4xl "
+              />
+            </Link>
+            <Link href="https://twitter.com/HRSohel10" target="_blank">
+              <FontAwesomeIcon
+                icon={faXTwitter}
+                className="text-2xl sm:text-4xl "
+                color="rgb(30 48 80)"
+              />
+            </Link>
+            <Link href="https://github.com/hrsohel" target="_blank">
+              <FontAwesomeIcon
+                icon={faGithub}
+                className="text-2xl sm:text-4xl "
+                color="#333"
+              />
+            </Link>
+          </div>
+          <div className="flex items-center justify-center">
+            <Link
+              className="text-white font-bold bg-[#333] rounded-md text-sm sm:text-lg px-4 py-2"
+              href="/works"
+            >
+              See my work
+            </Link>
+          </div>
         </div>
       </div>
     </main>

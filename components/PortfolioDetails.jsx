@@ -80,8 +80,11 @@ const PortfolioDetails = () => {
         </>
       ) : (
         <>
-          <div className="min-h-[50vh]  bg-yellow-500 flex items-center justify-center">
-            <h1 className="text-center uppercase text-xl text-white font-semibold sm:text-2xl md:text-4xl">
+          <div className="min-h-[50vh]  portfolio-details flex items-center justify-center">
+            <h1
+              style={{ textShadow: "2px 2px 5px #333" }}
+              className="text-center uppercase text-xl text-white font-semibold sm:text-2xl md:text-4xl"
+            >
               project details
             </h1>
           </div>
