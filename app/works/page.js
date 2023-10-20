@@ -4,6 +4,7 @@ import { faCheckCircle } from "@fortawesome/free-regular-svg-icons";
 import {
   faAward,
   faBriefcase,
+  faCheck,
   faUsers,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,85 +15,129 @@ const page = () => {
   return (
     <>
       <Navbar />
-      <div className="relative bg-yellow-500">
+      <div className="relative bg-slate-100">
         {/* <div className=" bg-red-500 absolute top-0 left-0 w-full h-full"></div> */}
         <div className="flex w-full h-full items-center justify-around flex-row py-8 px-2">
-          <div className="flex items-center justify-center flex-col text-black my-2">
-            <div className="w-[3.5rem] h-[3.5rem] sm:w-[5rem] sm:h-[5rem]  p-4  rounded-full bg-white flex items-center justify-center">
-              <FontAwesomeIcon
-                icon={faCheckCircle}
-                className="icons text-yellow-500 text-4xl sm:text-7xl md:text-8xl"
-              />
+          <div className="flex  items-center justify-center flex-col text-black my-2">
+            <div className="opera-container2 w-[5rem] h-[5rem] sm:w-[8rem] sm:h-[8rem]  p-4  rounded-full  flex items-center justify-center">
+              <div
+                className="round-div h-full w-full flex items-center justify-center "
+                style={{
+                  "--before": "rgb(234 179 8)",
+                  "--after": "rgb(255, 218, 72)",
+                }}
+              >
+                <FontAwesomeIcon
+                  icon={faCheck}
+                  // "text-4xl
+                  // sm:text-7xl
+                  // md:text-8xl"
+                  className="icons text-yellow-500 text-4xl sm:text-6xl"
+                />
+              </div>
             </div>
             <p
               style={{ textShadow: "0px 0px 3px white" }}
-              className="text-xl md:text-4xl font-bold text-center my-2 text-white"
+              className="text-[1.2rem] md:text-4xl font-bold text-center my-2 text-[#444]"
             >
               10
             </p>
             <p
               style={{ textShadow: "0px 0px 3px white" }}
-              className="uppercase text-center text-sm md:text-lg font-bold text-white"
+              className="uppercase text-center text-[0.8rem] md:text-lg font-bold text-[#444]"
             >
               Works completed
             </p>
           </div>
           <div className="flex justify-center items-center flex-col text-black my-2">
-            <div className="w-[3.5rem] h-[3.5rem] sm:w-[5rem] sm:h-[5rem] p-4 rounded-full bg-white flex items-center justify-center">
-              <FontAwesomeIcon
-                icon={faBriefcase}
-                className="icons text-yellow-500 text-4xl "
-              />
+            <div className="opera-container2 w-[5rem] h-[5rem] sm:w-[8rem] sm:h-[8rem]  p-4  rounded-full  flex items-center justify-center">
+              <div
+                className="round-div h-full w-full flex items-center justify-center "
+                style={{
+                  "--before": "rgb(234 179 8)",
+                  "--after": "rgb(255, 218, 72)",
+                }}
+              >
+                <FontAwesomeIcon
+                  icon={faBriefcase}
+                  // "text-4xl
+                  // sm:text-7xl
+                  // md:text-8xl"
+                  className="icons text-yellow-500 text-3xl sm:text-6xl"
+                />
+              </div>
             </div>
             <p
               style={{ textShadow: "0 0 3px white" }}
-              className="text-xl md:text-4xl font-bold text-center my-2 text-white"
+              className="text-[1.2rem] text-[#444] md:text-4xl font-bold text-center my-2"
             >
               3
             </p>
             <p
               style={{ textShadow: "0 0 3px white" }}
-              className="uppercase text-center text-sm md:text-lg font-bold text-white"
+              className="uppercase text-center text-[0.8rem] text-[#444] md:text-lg font-bold "
             >
               years of experience
             </p>
           </div>
           <div className="flex justify-center items-center flex-col text-black my-2">
-            <div className="w-[3.5rem] h-[3.5rem] sm:w-[5rem] sm:h-[5rem] p-4 rounded-full bg-white flex items-center justify-center">
-              <FontAwesomeIcon
-                icon={faUsers}
-                className="icons text-yellow-500 text-4xl  "
-              />
+            <div className="opera-container2 w-[5rem] h-[5rem] sm:w-[8rem] sm:h-[8rem]  p-4  rounded-full  flex items-center justify-center">
+              <div
+                className="round-div h-full w-full flex items-center justify-center "
+                style={{
+                  "--before": "rgb(234 179 8)",
+                  "--after": "rgb(255, 218, 72)",
+                }}
+              >
+                <FontAwesomeIcon
+                  icon={faUsers}
+                  // "text-4xl
+                  // sm:text-7xl
+                  // md:text-8xl"
+                  className="icons text-yellow-500 sm:text-5xl text-2xl"
+                />
+              </div>
             </div>
             <p
               style={{ textShadow: "0px 0px 3px white" }}
-              className="text-xl md:text-4xl font-bold text-center my-2 text-white"
+              className="text-[1.2rem] text-[#444] md:text-4xl font-bold text-center my-2 "
             >
               12
             </p>
             <p
               style={{ textShadow: "0px 0px 3px white" }}
-              className="uppercase text-center text-sm md:text-lg font-bold text-white"
+              className="uppercase text-center text-[0.8rem] text-[#444] md:text-lg font-bold "
             >
               total clients
             </p>
           </div>
           <div className="flex justify-center items-center flex-col text-black my-2">
-            <div className="w-[3.5rem] h-[3.5rem] sm:w-[5rem] sm:h-[5rem] p-4 rounded-full bg-white flex items-center justify-center">
-              <FontAwesomeIcon
-                icon={faAward}
-                className="icons text-yellow-500 text-4xl"
-              />
+            <div className="opera-container2 w-[5rem] h-[5rem] sm:w-[8rem] sm:h-[8rem]  p-4  rounded-full  flex items-center justify-center">
+              <div
+                className="round-div h-full w-full flex items-center justify-center "
+                style={{
+                  "--before": "rgb(234 179 8)",
+                  "--after": "rgb(255, 218, 72)",
+                }}
+              >
+                <FontAwesomeIcon
+                  icon={faAward}
+                  // "text-4xl
+                  // sm:text-7xl
+                  // md:text-8xl"
+                  className="icons text-yellow-500 sm:text-6xl text-3xl"
+                />
+              </div>
             </div>
             <p
               style={{ textShadow: "0px 0px 3px white" }}
-              className="text-xl md:text-4xl font-bold text-center my-2 text-white"
+              className="text-[1.2rem] text-[#444] md:text-4xl font-bold text-center my-2 "
             >
               2
             </p>
             <p
               style={{ textShadow: "0px 0px 3px white" }}
-              className="uppercase text-center text-sm md:text-lg font-bold text-white"
+              className="uppercase text-center text-[0.8rem] text-[#444] md:text-lg font-bold "
             >
               awards won
             </p>

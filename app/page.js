@@ -8,7 +8,6 @@ import ServiceCard from "@/components/ServiceCard";
 import { data } from "@/controllers/data";
 import { skills } from "@/controllers/skill";
 import Skills from "@/components/Skills";
-import AboutImage from "@/components/AboutImage";
 
 const page = () => {
   return (
@@ -45,7 +44,7 @@ const page = () => {
       {/* <p className="text-center text-[1rem] sm:text-lg mb-4">
         These are the services I serve
       </p> */}
-      <div className="flex items-start justify-center sm:gap-4 gap-2 my-4 flex-wrap">
+      <div className="flex items-start  justify-center sm:gap-4 gap-2 my-4 flex-wrap">
         {data.map((item) => {
           return (
             <ServiceCard

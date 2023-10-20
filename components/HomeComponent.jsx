@@ -11,6 +11,7 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
+import OperaComponent from "./OperaComponent";
 
 const HomeComponent = () => {
   const [image, setImage] = React.useState("/images/imaheforportfolio.png");
@@ -23,7 +24,16 @@ const HomeComponent = () => {
     AOS.init({ duration: 2000 });
   }, []);
   return (
-    <main className="px-2 py-4 md:px-8 min-h-[91vh] md:h-[91vh] border-b-2 border-yellow-400">
+    <main className="px-2 relative py-4 md:px-8 min-h-[91vh] md:h-[91vh] border-b-2 border-yellow-400">
+      <OperaComponent
+        position="absolute"
+        top=""
+        left="5%"
+        right=""
+        bottom="10%"
+        before="rgb(234 179 8)"
+        after="rgb(255, 218, 72)"
+      />
       <div className="">
         <p className="text-2xl font-bold">Create Best Technology</p>
         <p className="text-4xl md:text-6xl font-bold">For Any Device</p>
@@ -44,7 +54,16 @@ const HomeComponent = () => {
             />
           </div>
         </div>
-        <div className="mt-4 w-full  " data-aos="zoom-in">
+        <div className="mt-4 w-full relative " data-aos="zoom-in">
+          <OperaComponent
+            position="absolute"
+            top=""
+            left=""
+            right="5%"
+            bottom="5%"
+            before="#444"
+            after="#666"
+          />
           {/* <Image
             src="/images/electronjs.png"
             alt="desktop"
