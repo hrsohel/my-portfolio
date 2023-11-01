@@ -9,7 +9,7 @@ const Skills = ({ item }) => {
   }, []);
   return (
     <div
-      className="box rounded-lg relative w-[10rem] sm:w-[15rem] min-h-[15rem] py-4 flex items-center justify-center flex-col"
+      className="box rounded-lg relative w-[10rem] sm:w-[15rem] min-h-[10rem] py-4 flex items-center justify-center flex-col"
       style={{ "--i": `${item.skill}%` }}
       data-aos="zoom-in-up"
     >

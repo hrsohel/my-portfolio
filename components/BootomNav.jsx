@@ -28,7 +28,7 @@ const BootomNav = () => {
         className="sm:hidden block z-40 fixed left-0 bottom-0 right-0 bg-white"
       >
         {loader ? <Loader /> : <></>}
-        <ul className="px-2 py-[.40rem] flex items-center justify-between">
+        <ul className="px-2 py-[.40rem] flex items-center justify-around">
           <li className="flex items-center justify-center flex-col">
             <Link onClick={showLoader} href="/">
               <>

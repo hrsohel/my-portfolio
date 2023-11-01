@@ -54,16 +54,16 @@ const Portfolio = ({
     <>
       <div
         style={{ boxShadow: "0 0 .3rem #333" }}
-        className="md:w-[20rem] lg:w-[25rem] rounded-md m-4"
+        className=" w-[10.5rem] sm:w-[15rem] h-[21rem] sm:h-[28rem] md:w-[20rem] lg:w-[25rem] rounded-md"
         data-aos="zoom-in"
       >
-        <div className="overflow-hidden relative">
+        <div className="overflow-hidden relative rounded-t-md">
           <Image
             src={image?.url}
             width="1000"
             height="1000"
             alt="supersolution"
-            className="portfolio-image w-full h-[12rem] md:h-[15rem] object-cover"
+            className="portfolio-image rounded-t-md w-full h-[7rem] sm:h-[12rem] md:h-[15rem] object-contain object-top"
           />
           {cookie ? (
             <>
@@ -112,32 +112,28 @@ const Portfolio = ({
           )}
         </div>
         {showLoader ? <Loader /> : <></>}
-        <div className="p-4 flex items-center justify-between">
+        {/* flex items-center justify-between */}
+        <div className=" p-2  sm:p-4 flex flex-col">
           <div>
-            <h1 className="my-3 text-xl font-bold">{title}</h1>
-            <p>
-              <span className="text-yellow-600 text-sm sm:text-lg">
-                {category}
-              </span>{" "}
-              /{" "}
-              <span className="text-[#333] text-sm sm:text-lg">
+            <h1 className="my-1 text-[1rem] sm:text-xl font-bold">{title}</h1>
+            <p className="text-sm sm:text-lg">
+              Category:
+              <span className="text-yellow-600  ml-2">{category}</span>
+            </p>
+            <p className="text-sm sm:text-lg my-1">
+              Date:
+              <span className="text-[#333] ml-2">
                 {moment(date).format("DD MMM, YYYY")}
               </span>
             </p>
           </div>
-          <div>
-            <Link
-              className="py-2 px-3 border-yellow-500 border-2 rounded-full"
-              onClick={() => setShowLoader(true)}
-              href={`/works/${id}`}
-            >
-              <FontAwesomeIcon
-                icon={faPlus}
-                color="rgb(250 204 21)"
-                className="text-sm sm:text-lg"
-              />
-            </Link>
-          </div>
+          <Link
+            className="w-[80%] mx-auto my-2 px-2 py-1 text-center border-2 border-yellow-500 rounded-full hover:bg-yellow-500 hover:text-white text-yellow-500"
+            onClick={() => setShowLoader(true)}
+            href={`/works/${id}`}
+          >
+            See details
+          </Link>
         </div>
       </div>
     </>

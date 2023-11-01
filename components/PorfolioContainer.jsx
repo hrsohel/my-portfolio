@@ -27,7 +27,7 @@ const PorfolioContainer = () => {
   }, [update]);
   return (
     <>
-      <div className="flex items-center justify-center flex-wrap sm:px-8">
+      <div className="flex items-center justify-center gap-2 flex-wrap p-0 sm:px-8">
         {isLoading ? (
           <div className=" flex items-center justify-center">
             <Image

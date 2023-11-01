@@ -53,9 +53,12 @@ const GetinTouch = () => {
               color="rgb(250 204 21)"
             />
           </span>
-          <span className="text-[1rem] md:text-[1.2rem]">
+          <Link
+            href="mailto:hrsohel679@gmail.com"
+            className="text-[1rem] md:text-[1.2rem]"
+          >
             hrsohel679@gmail.com
-          </span>
+          </Link>
         </p>
       </div>
       <div className="my-8">
@@ -70,7 +73,11 @@ const GetinTouch = () => {
             color="rgb(59 130 246)"
           />
         </Link>
-        <Link className="mr-4" href="#">
+        <Link
+          className="mr-4"
+          target="_blank"
+          href="https://www.linkedin.com/in/mohammad-harunur-rashid-057857287/"
+        >
           <FontAwesomeIcon
             icon={faLinkedin}
             size="2xl"

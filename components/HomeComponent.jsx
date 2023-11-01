@@ -89,7 +89,10 @@ const HomeComponent = () => {
                 className="text-2xl sm:text-4xl "
               />
             </Link>
-            <Link href="#" target="_blank">
+            <Link
+              href="https://www.linkedin.com/in/mohammad-harunur-rashid-057857287/"
+              target="_blank"
+            >
               <FontAwesomeIcon
                 icon={faLinkedin}
                 color="rgb(59 130 246)"
