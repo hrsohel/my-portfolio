@@ -54,7 +54,8 @@ const Portfolio = ({
     <>
       <div
         style={{ boxShadow: "0 0 .3rem #333" }}
-        className=" w-[10.5rem] sm:w-[15rem] h-[21rem] sm:h-[28rem] md:w-[20rem] lg:w-[25rem] rounded-md"
+        // h-[21rem]
+        className=" w-[10.5rem] sm:w-[15rem]  sm:h-[28rem] md:w-[20rem] lg:w-[25rem] rounded-md"
         data-aos="zoom-in"
       >
         <div className="overflow-hidden relative rounded-t-md">
