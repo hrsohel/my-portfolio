@@ -55,7 +55,7 @@ const Portfolio = ({
       <div
         style={{ boxShadow: "0 0 .3rem #333" }}
         // h-[21rem]
-        className=" w-[10.5rem] sm:w-[15rem]  sm:h-[28rem] md:w-[20rem] lg:w-[25rem] rounded-md"
+        className=" w-[10.5rem] sm:w-[15rem]  sm:min-h-[20rem] md:w-[20rem] lg:w-[25rem] rounded-md"
         data-aos="zoom-in"
       >
         <div className="overflow-hidden relative rounded-t-md">
@@ -64,7 +64,7 @@ const Portfolio = ({
             width="1000"
             height="1000"
             alt="supersolution"
-            className="portfolio-image rounded-t-md w-full h-[7rem] sm:h-[12rem] md:h-[15rem] object-contain object-top"
+            className="portfolio-image rounded-t-md w-full h-[6rem] sm:h-[12rem] md:h-[15rem] object-cover object-top"
           />
           {cookie ? (
             <>
@@ -114,9 +114,9 @@ const Portfolio = ({
         </div>
         {showLoader ? <Loader /> : <></>}
         {/* flex items-center justify-between */}
-        <div className=" p-2  sm:p-4 flex flex-col">
+        <div className=" px-2 py-0 sm:py-4 sm:px-4 flex flex-col">
           <div>
-            <h1 className="my-1 text-[1rem] sm:text-xl font-bold">{title}</h1>
+            <h1 className="my-0 text-[1rem] sm:text-xl font-bold">{title}</h1>
             <p className="text-sm sm:text-lg">
               Category:
               <span className="text-yellow-600  ml-2">{category}</span>

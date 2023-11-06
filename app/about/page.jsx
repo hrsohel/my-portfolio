@@ -20,8 +20,6 @@ const page = () => {
         <div className="flex items-start justify-between flex-wrap lg:flex-nowrap gap-4">
           <div className="lg:w-[50%]">
             <AboutImagePart />
-            <br />
-            <br />
             {/* <div className="my-8">
               <div className="text-center flex items-center justify-center my-4 text-lg sm:text-2xl font-bold py-4">
                 <h1

@@ -46,7 +46,7 @@ const AboutImagePart = () => {
             style={{ objectFit: "cover" }}
             width="1000"
             height="1000"
-            className="rounded-md mb-4 w-[120px] h-[120px] sm:w-[200px] sm:h-[200px] lg:w-[220px] lg:h-[220px]"
+            className="rounded-md mb-2 w-[120px] h-[120px] sm:w-[200px] sm:h-[200px] lg:w-[220px] lg:h-[220px]"
           />
         ) : (
           <div className="w-[10rem] h-[10rem] relative bg-yellow-500">
@@ -105,7 +105,7 @@ const AboutImagePart = () => {
           <div className="mb-2">
             Email: <span className="font-normal">hrsohel679@gmail.com</span>
           </div>
-          <div className="mb-2">
+          <div className="mb-0">
             Phone: <span className="font-normal">(+880) 1690130452</span>
           </div>
         </div>
