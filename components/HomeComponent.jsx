@@ -99,7 +99,7 @@ const HomeComponent = () => {
                 className="text-2xl sm:text-4xl "
               />
             </Link>
-            <Link href="https://twitter.com/HRSohel10" target="_blank">
+            <Link href="https://twitter.com/iamhrsohel" target="_blank">
               <FontAwesomeIcon
                 icon={faXTwitter}
                 className="text-2xl sm:text-4xl "

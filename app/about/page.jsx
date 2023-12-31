@@ -84,7 +84,8 @@ const page = () => {
               >
                 <li className="ml-4 md:ml-8 my-2">Problem solving</li>
                 <li className="ml-4 md:ml-8 my-2">
-                  Web technology (currently working on Machine Learning models)
+                  Web technology (currently working on Machine Learning and Deep
+                  Learning models)
                 </li>
                 <li className="ml-4 md:ml-8 my-2">Cricket</li>
                 <li className="ml-4 md:ml-8 my-2">Cooking</li>

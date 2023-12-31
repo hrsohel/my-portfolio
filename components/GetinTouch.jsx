@@ -86,7 +86,7 @@ const GetinTouch = () => {
         </Link>
         <Link
           className="mr-4"
-          href="https://twitter.com/HRSohel10"
+          href="https://twitter.com/hrsohel"
           target="_blank"
         >
           <FontAwesomeIcon icon={faXTwitter} size="2xl" color="black" />

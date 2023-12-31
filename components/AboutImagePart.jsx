@@ -4,6 +4,7 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+import Link from "next/link";
 
 const AboutImagePart = () => {
   const [cookie, setCookie] = React.useState("");
@@ -103,7 +104,10 @@ const AboutImagePart = () => {
             Address: <span className="font-normal">Chattogram, Bangladesh</span>
           </div>
           <div className="mb-2">
-            Email: <span className="font-normal">hrsohel679@gmail.com</span>
+            Email:{" "}
+            <Link href="mailto:hrsohel679@gmail.com" className="font-normal">
+              hrsohel679@gmail.com
+            </Link>
           </div>
           <div className="mb-0">
             Phone: <span className="font-normal">(+880) 1690130452</span>
